@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e53935">
+<meta name="description" content="Panel Reseller L&M">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<title>L&M Reseller</title>
+</head>
+<body>
+<header class="top"><div><strong>L&M</strong><span> RESELLER</span></div><button id="install" hidden>Instalar</button></header>
+
+<main>
+<section id="dashboard" class="page active">
+<h1>Dashboard</h1>
+<div class="grid">
+<div class="card"><small>Clientes activos</small><b id="active">0</b></div>
+<div class="card"><small>Por vencer</small><b id="expiring">0</b></div>
+<div class="card"><small>Vencidos</small><b id="expired">0</b></div>
+<div class="card"><small>Ingresos</small><b id="income">$0</b></div>
+</div>
+<div class="panel"><h2>Resumen</h2><div id="summary"></div></div>
+</section>
+
+<section id="clients" class="page">
+<h1>Clientes</h1>
+<input id="search" class="input" placeholder="Buscar cliente...">
+<div class="panel">
+<form id="clientForm">
+<input id="name" class="input" placeholder="Nombre" required>
+<input id="user" class="input" placeholder="Usuario" required>
+<input id="service" class="input" placeholder="Servicio" required>
+<input id="price" class="input" type="number" placeholder="Precio" min="0" required>
+<label>Vencimiento <input id="expiry" class="input" type="date" required></label>
+<button class="primary">Agregar cliente</button>
+</form>
+</div>
+<div id="clientList"></div>
+</section>
+
+<section id="renewals" class="page">
+<h1>Renovaciones</h1><div id="renewalList"></div>
+</section>
+
+<section id="movements" class="page">
+<h1>Movimientos</h1><div id="movementList"></div>
+</section>
+</main>
+
+<nav>
+<button data-page="dashboard">⌂<span>Inicio</span></button>
+<button data-page="clients">👥<span>Clientes</span></button>
+<button data-page="renewals">↻<span>Renovaciones</span></button>
+<button data-page="movements">💰<span>Movimientos</span></button>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>
